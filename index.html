@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Virtual Sensory Room</title>
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      padding: 24px;
+      background: #f5f5f5;
+    }
+    h1 {
+      color: #333;
+    }
+    .buttons {
+      display: grid;
+      gap: 12px;
+      max-width: 420px;
+    }
+    button {
+      padding: 10px 14px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    audio {
+      margin-top: 20px;
+      width: 100%;
+      max-width: 420px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Virtual Sensory Room</h1>
+
+  <div class="buttons">
+    <button onclick="playTrack('music/track1.mp3')">Track 1</button>
+    <button onclick="playTrack('music/track2.mp3')">Track 2</button>
+    <button onclick="playTrack('music/track3.mp3')">Track 3</button>
+    <button onclick="playTrack('music/track4.mp3')">Track 4</button>
+    <button onclick="playTrack('music/track5.mp3')">Track 5</button>
+    <button onclick="playTrack('music/track6.mp3')">Track 6</button>
+    <button onclick="playTrack('music/track7.mp3')">Track 7</button>
+    <button onclick="playTrack('music/track8.mp3')">Track 8</button>
+    <button onclick="playTrack('music/track9.mp3')">Track 9</button>
+
+    <button onclick="pauseTrack()">Pause</button>
+    <button onclick="stopTrack()">Stop</button>
+  </div>
+
+  <audio id="player" controls></audio>
+
+  <script>
+    function playTrack(url) {
+      const player = document.getElementById('player');
+      player.src = url;
+      player.play();
+    }
+    function pauseTrack() {
+      const player = document.getElementById('player');
+      player.pause();
+    }
+    function stopTrack() {
+      const player = document.getElementById('player');
+      player.pause();
+      player.currentTime = 0;
+    }
+  </script>
+</body>
+</html>
+
